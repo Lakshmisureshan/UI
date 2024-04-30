@@ -3,7 +3,43 @@
     <div class="d-flex justify-content-end mt-3">
       <a [routerLink]="['/admin/category/add']" class="btn btn-primary">Add Category</a>
     </div>
+    <div [style.backgroundColor]="bgcolor">{{vv}}</div>
+<button (click)="incrementcounter()">Increment</button>
+<p>counter:{{counter}}</p>
+<h2 [class.textColor]="redText">ygutyutyu</h2>
+
+  <input [(ngModel)]="inputtext"  placeholder="Enter Text"/>
+your text :{{inputtext}}
+<div  *ngIf="isloggedIn"> Welcome {{username}}</div>
+<div  *ngIf="!isloggedIn"> Please Login </div>
+
+
+<div *ngIf="isloggedIn else loggedout">hhhhhhhhhhhh</div>
+
+<ng-template #loggedout >Please Login to the system</ng-template>
+<div> today is {{today}}</div>
+
+<div> today is {{today|date}}</div>
+<div> {{currency |currency}} </div>
+<div> {{currency |percent}} </div>
+<div> {{currency |currency:"EUR" :"symbol" :"1.1-4"}} </div>
+
+<div> {{titles | append :"ghjghjghjghj"}} </div>
+<ul>
+  <li *ngFor="let item of names">
+{{item|uppercase}}
+
+  </li>
+</ul>
+<div [ngClass]="classes">{{titles}}</div>
+
     <ng-container *ngIf="categorys">
+      <table>
+        <tr>
+          <td>
+          </td>
+        </tr>
+      </table>
       <table class="table table-bordered mt-3">
         <thead>
           <tr>
@@ -14,9 +50,11 @@
         </thead>
         <tbody>
             <tr *ngFor="let cat of categorys; let i = index">
-                <td>{{ i }}</td>
+                <td  >{{ i }}</td>
                
-                <td>{{ cat.Name }}</td>
+                <td>{{ cat | json }}</td>
+                <td>{{cat.Id}}</td>
+          <td>{{vv}}</td>
               </tr>
         </tbody>
       </table>
