@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-end mt-3">
       <a [routerLink]="['/admin/category/add']" class="btn btn-primary">Add Category</a>
     </div>
-    <div [style.backgroundColor]="bgcolor">{{vv}}</div>
+    <!--<div [style.backgroundColor]="bgcolor">{{vv}}</div>
 <button (click)="incrementcounter()">Increment</button>
 <p>counter:{{counter}}</p>
 <h2 [class.textColor]="redText">ygutyutyu</h2>
@@ -30,31 +30,30 @@ your text :{{inputtext}}
 {{item|uppercase}}
 
   </li>
-</ul>
+</ul> -->
 <div [ngClass]="classes">{{titles}}</div>
 
     <ng-container *ngIf="categorys">
-      <table>
-        <tr>
-          <td>
-          </td>
-        </tr>
-      </table>
+ 
       <table class="table table-bordered mt-3">
         <thead>
           <tr>
-   
+            <th>Index</th>
+            <th>ID</th>
             <th>Name</th>
- 
+            <th>Url Handle</th>
           </tr>
         </thead>
         <tbody>
             <tr *ngFor="let cat of categorys; let i = index">
-                <td  >{{ i }}</td>
-               
-                <td>{{ cat | json }}</td>
-                <td>{{cat.Id}}</td>
-          <td>{{vv}}</td>
+                <td>{{ i }}</td>
+                <td>{{cat.id}}</td>
+          <td>{{cat.name}}</td>
+          <td>{{cat.urlHandle}}</td>
+          <td>
+<a class="btn btn-light"  [routerLink]="['/admin/category', cat.id]"  >Edit</a>
+          </td>
+
               </tr>
         </tbody>
       </table>

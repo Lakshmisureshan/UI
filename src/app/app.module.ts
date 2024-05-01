@@ -9,13 +9,15 @@ import { AddCategoryComponent } from './features/category/add-category/add-categ
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppendPipe } from './pipe/append.pipe';
+import { EditCategoryComponent } from './features/category/edit-category/edit-category.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CategoryListComponent,
     AddCategoryComponent,
-    AppendPipe
+    AppendPipe,
+    EditCategoryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,38 @@
+<div class="container">
+<h1 class="mt-3">Edit Category</h1>
+<ng-container  *ngIf="category; else notfound">
+<form #form="ngForm"  (ngSubmit)="onFormSubmit()">
+<div class="mt-2">
+<div class="mt-3">
+<label  for ="categoryId" class="form-label">Category Id</label>
+<input type ="text"  disabled  id ="categoryId"  class="form-control"  name ="categoryId"  value ="{{category.id}}">
+</div>
+<div class="mt-3">
+    <label  for ="categoryName" class="form-label">Category Name</label>
+    <input type ="text"    id ="categoryName"  class="form-control"  name ="categoryName"  [(ngModel)]="category.name">
+    </div>
+
+    <div class="mt-3">
+        <label  for ="urlHandle" class="form-label">urlHandle</label>
+        <input type ="text"    id ="urlHandle"  class="form-control"  name ="urlHandle"  [(ngModel)] ="category.urlHandle">
+   </div>
+
+<div class="mt-3">
+
+<button class="btn  btn-primary"  type="submit">Save</button>
+
+</div>
+
+
+
+
+
+</div>
+</form>
+</ng-container>
+<ng-template #notfound>
+<div class="alert alert-warning" role="alert">
+Category Not Found
+</div>
+</ng-template>
+</div>
