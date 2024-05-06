@@ -29,7 +29,7 @@ const routes: Routes =  [
   component: AddBlogpostComponent
 
 }
- 
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
